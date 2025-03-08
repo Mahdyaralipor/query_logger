@@ -8,10 +8,18 @@ class LogQueryListener
 {
     public function handle(QueryExecuted $event)
     {
-        $sql = $event->sql;
-        $bindings = $event->bindings;
-        $time = $event->time;
 
-        Log::info("Query: $sql | Bindings: " . json_encode($bindings) . " | Time: $time ms");
+        if (!config('app.query_log_enabled', false)) {
+            return;
+        }
+
+        $queryData = [
+            'query' => $event->sql,
+            'bindings' => $event->bindings,
+            'time' => $event->time,
+        ];
+
+
+        Log::channel('query')->info("Query executed:", $queryData);
     }
 }

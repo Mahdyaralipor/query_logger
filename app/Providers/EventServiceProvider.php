@@ -2,12 +2,13 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Database\Events\QueryExecuted;
 
 class EventServiceProvider extends ServiceProvider
 {
     protected $listen = [
-        'Illuminate\Database\Events\QueryExecuted' => [
-            'App\Listeners\LogQueryListener',
+        QueryExecuted::class => [
+            \App\Listeners\LogQueryListener::class,
         ],
     ];
 

@@ -1,15 +1,14 @@
 <?php
 
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QueryLogController;
 
 Route::get('/', function () {
 
-    $user = User::create([
+    User::create([
         "name" => "mahdyar",
-        "email" => "mahdyadaasfaaaaaaaasaaaaddsar@gmail.com",
+        "email" => "ssssad@gmail.com",
         "password" => bcrypt("password")
     ]);
 
@@ -17,3 +16,5 @@ Route::get('/', function () {
 
     return "User created!";
 });
+
+Route::post('/log-query', [QueryLogController::class, 'store']);
