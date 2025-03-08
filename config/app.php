@@ -122,4 +122,6 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+    
+    'query_log_enabled' => env('QUERY_LOG_ENABLED', false),
 ];
