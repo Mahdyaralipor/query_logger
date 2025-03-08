@@ -8,7 +8,7 @@ Route::get('/', function () {
 
     User::create([
         "name" => "mahdyar",
-        "email" => "mahdyadaasfaaaaaaaasaaaaddsar@gmail.com",
+        "email" => "ssssad@gmail.com",
         "password" => bcrypt("password")
     ]);
 
