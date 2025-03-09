@@ -12,9 +12,5 @@ Route::get('/', function () {
         "password" => bcrypt("password")
     ]);
 
-
-
     return "User created!";
 });
-
-Route::post('/log-query', [QueryLogController::class, 'store']);

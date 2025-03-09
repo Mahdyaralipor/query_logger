@@ -19,7 +19,6 @@ class LogQueryListener
             'time' => $event->time,
         ];
 
-
         Log::channel('query')->info("Query executed:", $queryData);
     }
 }
