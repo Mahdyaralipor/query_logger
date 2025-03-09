@@ -12,7 +12,5 @@ Route::get('/', function () {
         "password" => bcrypt("password")
     ]);
 
-
-
     return "User created!";
 });
