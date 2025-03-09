@@ -16,5 +16,3 @@ Route::get('/', function () {
 
     return "User created!";
 });
-
-Route::post('/log-query', [QueryLogController::class, 'store']);
